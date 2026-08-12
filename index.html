@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <title>استمارة الترشح للسباق القيادي - CLUB TOMOUH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-area">
+                <img src="logo.png" alt="Club Tomouh Logo" class="site-logo">
+                <div class="brand-text">
+                    <h2>CLUB TOMOUH</h2>
+                    <p class="subtitle">LEADERSHIP CHALLENGE</p>
+                </div>
+            </div>
+            <h1>استمارة الترشح للسباق القيادي</h1>
+            <p class="motto">"القيادة تكليف وليست تشريفًا. الفرصة متاحة لكل من يملك الرؤية، الكفاءة والأثر."</p>
+        </header>
+
+        <div class="notice-box">
+            <h3>تنبيه للمترشح</h3>
+            <p>هذه الاستمارة تمثل المرحلة الأولى من عملية الترشح لقيادة أحد فروع نادي طموح.</p>
+            <p>سيتم دراسة الطلبات وفق معايير محددة، ويُقبل للمرحلة التالية المترشحون الذين يستوفون شروط الترشح وتظهر
+                لديكم مؤهلات قيادية مناسبة.</p>
+            <p><strong>ملاحظة:</strong> التسجيل في الاستمارة لا يعني القبول النهائي في المنافسة.</p>
+        </div>
+
+        <form action="/api/submit" method="POST">
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">01</span> معلومات المترشح</h2>
+
+                <div class="form-group">
+                    <label for="fullname">الاسم واللقب *</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>الفرع الذي ترغب في الترشح لقيادته *</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-card"><input type="radio" name="branch" value="بودكاست" required> فرع
+                            بودكاست</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="الديزاين"> فرع
+                            الديزاين</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="المونتاج"> فرع
+                            المونتاج</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="الميديا"> فرع
+                            الميديا</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="التقني"> فرع
+                            التقني</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="كتابة السكريبت"> فرع كتابة
+                            السكريبت</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="التعليق الصوتي"> فرع
+                            التعليق الصوتي</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="المتطوعين"> فرع
+                            المتطوعين</label>
+                        <label class="checkbox-card"><input type="radio" name="branch" value="المتابعة والتقييم"> فرع
+                            المتابعة والتقييم</label>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="current_role">صفتك الحالية داخل نادي طموح *</label>
+                        <input type="text" id="current_role" name="current_role" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="join_date">تاريخ انضمامك إلى نادي طموح *</label>
+                        <input type="date" id="join_date" name="join_date" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">02</span> مسارك داخل النادي</h2>
+
+                <div class="form-group">
+                    <label for="activities">منذ انضمامك إلى النادي، ما أهم الأنشطة أو المشاريع التي شاركت فيها؟</label>
+                    <textarea id="activities" name="activities" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="achievement">ما أبرز إنجاز أو مساهمة قدمتها للنادي وتعتبرها دليلاً على قدرتك على تحمل
+                        المسؤولية؟</label>
+                    <textarea id="achievement" name="achievement" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>هل سبق لك تحمل مسؤولية أو قيادة فريق داخل النادي؟</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="previous_leadership" value="نعم" id="prev_lead_yes">
+                            نعم</label>
+                        <label><input type="radio" name="previous_leadership" value="لا" id="prev_lead_no"> لا</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="leadership_details_group">
+                    <label for="leadership_details">إذا كانت الإجابة نعم، اذكر المسؤولية والمدة:</label>
+                    <input type="text" id="leadership_details" name="leadership_details">
+                </div>
+
+                <div class="form-group">
+                    <label>كيف تقيم مستوى مساهمتك الحالية داخل النادي؟</label>
+                    <div class="rating-options">
+                        <label><input type="radio" name="rating" value="1"> 1 - ضعيف</label>
+                        <label><input type="radio" name="rating" value="2"> 2 - مقبول</label>
+                        <label><input type="radio" name="rating" value="3"> 3 - جيد</label>
+                        <label><input type="radio" name="rating" value="4"> 4 - جيد جداً</label>
+                        <label><input type="radio" name="rating" value="5"> 5 - ممتاز</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">03</span> الدافع نحو القيادة</h2>
+
+                <div class="form-group">
+                    <label for="motivation">لماذا قررت الترشح لقيادة هذا الفرع تحديدًا؟</label>
+                    <span class="hint">نبحث هنا عن الدافع الحقيقي للترشح، وليس الرغبة في الحصول على المنصب.</span>
+                    <textarea id="motivation" name="motivation" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="value_add">ما الذي تعتقد أنك تستطيع تقديمه للفرع ولا يتم تقديمه بالشكل الكافي
+                        حاليًا؟</label>
+                    <textarea id="value_add" name="value_add" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>في رأيك، ما أهم ثلاث صفات يجب أن يمتلكها مسؤول الفرع الناجح؟</label>
+                    <input type="text" name="trait_1" placeholder="1." class="mb-5">
+                    <input type="text" name="trait_2" placeholder="2." class="mb-5">
+                    <input type="text" name="trait_3" placeholder="3.">
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">04</span> الرؤية والخطة</h2>
+
+                <div class="form-group">
+                    <label for="vision">ما رؤيتك للفرع خلال فترة العهدة القادمة؟</label>
+                    <textarea id="vision" name="vision" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>ما أهم 3 أهداف تريد تحقيقها؟</label>
+                    <input type="text" name="goal_1" placeholder="الهدف الأول:" class="mb-5">
+                    <input type="text" name="goal_2" placeholder="الهدف الثاني:" class="mb-5">
+                    <input type="text" name="goal_3" placeholder="الهدف الثالث:">
+                </div>
+
+                <div class="form-group">
+                    <label for="first_project">ما أول مشروع أو تغيير ستعمل على إطلاقه إذا تم اختيارك مسؤولاً؟</label>
+                    <textarea id="first_project" name="first_project" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="kpi">كيف ستقيس نجاحك في قيادة الفرع؟ (اذكر مؤشرات أو نتائج ملموسة)</label>
+                    <textarea id="kpi" name="kpi" rows="3"></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">05</span> القيادة وإدارة الفريق</h2>
+
+                <div class="form-group">
+                    <label for="uncommitted_member">كيف ستتعامل مع عضو لا يلتزم بمهامه داخل الفرع؟</label>
+                    <textarea id="uncommitted_member" name="uncommitted_member" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="conflict_resolution">إذا حدث خلاف بين عضوين في فريقك، كيف ستتصرف؟</label>
+                    <textarea id="conflict_resolution" name="conflict_resolution" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="failure_handling">إذا فشل أحد المشاريع التي أشرفت عليها، ما أول خطوة ستقوم بها؟</label>
+                    <textarea id="failure_handling" name="failure_handling" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="team_engagement">كيف ستضمن مشاركة أعضاء الفرع وعدم اعتماد العمل على شخص أو شخصين
+                        فقط؟</label>
+                    <textarea id="team_engagement" name="team_engagement" rows="3"></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">06</span> الالتزام والمسؤولية</h2>
+
+                <div class="form-group">
+                    <label>هل أنت مستعد لتحمل المسؤولية والالتزام بمهام المنصب طوال فترة العهدة؟</label>
+                    <div class="radio-stack">
+                        <label><input type="radio" name="commitment" value="نعم، بشكل كامل"> نعم، بشكل كامل</label>
+                        <label><input type="radio" name="commitment" value="نعم، مع بعض الالتزامات الأخرى"> نعم، مع بعض
+                            الالتزامات الأخرى</label>
+                        <label><input type="radio" name="commitment" value="غير متأكد"> غير متأكد</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>كم من الوقت يمكنك تخصيصه أسبوعيًا لمهام الفرع؟</label>
+                    <div class="radio-stack">
+                        <label><input type="radio" name="time_allocated" value="أقل من 3 ساعات"> أقل من 3 ساعات</label>
+                        <label><input type="radio" name="time_allocated" value="3 - 5 ساعات"> 3 - 5 ساعات</label>
+                        <label><input type="radio" name="time_allocated" value="5 - 10 ساعات"> 5 - 10 ساعات</label>
+                        <label><input type="radio" name="time_allocated" value="أكثر من 10 ساعات"> أكثر من 10
+                            ساعات</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>هل أنت مستعد لحضور الاجتماعات الدورية والمشاركة في أنشطة النادي؟</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="meetings" value="نعم"> نعم</label>
+                        <label><input type="radio" name="meetings" value="لا"> لا</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>في حالة توليك المسؤولية، هل أنت مستعد للعمل مع الإدارة المركزية وباقي مسؤولي الفروع؟</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="central_mgmt" value="نعم"> نعم</label>
+                        <label><input type="radio" name="central_mgmt" value="لا"> لا</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">07</span> Leadership Pitch</h2>
+
+                <div class="form-group">
+                    <label>في حال تأهلك للمرحلة النهائية، هل أنت مستعد لتقديم عرض قيادي أمام أعضاء النادي؟</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="pitch_ready" value="نعم"> نعم</label>
+                        <label><input type="radio" name="pitch_ready" value="لا"> لا</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pitch_title">ما عنوان الـ Pitch الذي ستقديم؟</label>
+                    <input type="text" id="pitch_title" name="pitch_title">
+                </div>
+
+                <div class="form-group">
+                    <label for="why_you">في جملة واحدة فقط، لماذا يجب أن يختارك أعضاء النادي لقيادة هذا الفرع؟</label>
+                    <input type="text" id="why_you" name="why_you">
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title"><span class="step-num">08</span> الإقرار</h2>
+                <div class="declaration-box">
+                    <p>أقر أنا المترشح بأن المعلومات المقدمة في هذه الاستمارة صحيحة، وأدرك أن التسجيل لا يضمن القبول
+                        النهائي في المنافسة.</p>
+                    <p>كما أتعهد، في حال قبولي باحترام نظام Leadership Challenge، واحترام جميع المترشحين، والالتزام
+                        بمبادئ النزاهة والشفافية والعمل الجماعي.</p>
+                    <p>وأفهم أن منصب المسؤولية داخل نادي طموح هو تكليف قائم على الكفاءة والأثر والالتزام، وليس امتيازًا
+                        شخصيًا.</p>
+                </div>
+                <div class="form-group checkbox-agree">
+                    <label>
+                        <input type="checkbox" name="agree" required>
+                        أوافق على الإقرار أعلاه وأرغب في الترشح للسباق القيادي.
+                    </label>
+                </div>
+            </section>
+
+            <div class="submit-btn-container">
+                <button type="submit" class="submit-btn">إرسال استمارة الترشح</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

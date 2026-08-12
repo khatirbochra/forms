@@ -1,0 +1,349 @@
+:root {
+    --primary-color: #ff6f00;
+    --primary-shadow: #b34e00;
+    --secondary-color: #00bcd4;
+    --accent-color: #ff6f00;
+    --bg-color: #f4f6f9;
+    --card-bg: #0b1b54;
+    --text-color: #ffffff;
+    --border-color: #1e3a8a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl;
+    padding: 0 10px 30px 10px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff6f00, #00bcd4);
+    transition: width 0.3s ease-in-out;
+}
+
+.container {
+    max-width: 850px;
+    margin: 20px auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(11, 27, 84, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.site-logo {
+    height: 140px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.brand-text {
+    text-align: right;
+}
+
+.logo-area h2 {
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.logo-area .subtitle {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin: 0;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.motto {
+    font-style: italic;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.notice-box {
+    background: rgba(255, 255, 255, 0.07);
+    border-right: 6px solid var(--accent-color);
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    font-size: 0.9rem;
+    color: #f1f5f9;
+}
+
+.notice-box h3 {
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.step-num {
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.9rem;
+    padding: 3px 10px;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #f8fafc;
+}
+
+.hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: -5px;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    transition: all 0.25s ease;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 111, 0, 0.3);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.checkbox-card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent-color);
+}
+
+.radio-inline,
+.rating-options {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-inline label,
+.rating-options label {
+    font-weight: normal;
+    cursor: pointer;
+    color: #f1f5f9;
+}
+
+.radio-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-stack label {
+    font-weight: normal;
+    cursor: pointer;
+    color: #f1f5f9;
+}
+
+.mb-5 {
+    margin-bottom: 10px;
+}
+
+.declaration-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: #e2e8f0;
+}
+
+.declaration-box p {
+    margin-bottom: 8px;
+}
+
+.declaration-box p:last-child {
+    margin-bottom: 0;
+}
+
+.checkbox-agree label {
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.submit-btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    background: linear-gradient(180deg, #ff8f00 0%, #ff6f00 100%);
+    color: white;
+    padding: 14px 45px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 6px 0 var(--primary-shadow), 0 10px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    top: 0;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(180deg, #ffa000 0%, #ff8f00 100%);
+    top: -2px;
+}
+
+.submit-btn:active {
+    top: 4px;
+    box-shadow: 0 2px 0 var(--primary-shadow);
+}
+
+@media (max-width: 600px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 22px 16px;
+        border-radius: 14px;
+    }
+
+    .rating-options {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .logo-area {
+        flex-direction: column;
+    }
+
+    .brand-text {
+        text-align: center;
+    }
+}
